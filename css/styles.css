@@ -10,6 +10,7 @@
   --footer-icon-color: rgba(255, 255, 255, 0.1);
   --footer-icon-active-color: #31d0aa;
   --black-color: #000;
+  --form-border-color: rgba(255, 255, 255, 0.3);
   --modal-buttonclose-border: rgba(0, 0, 0, 0.1);
   --modal-background: rgba(46, 47, 66, 0.4);
   --modal-window-background: #fcfcfc;
@@ -21,6 +22,8 @@
   --filter-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
     0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
   --portfolio-card-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+  --placeholder-color-text: rgba(117, 117, 117, 0.5);
+  --input-border-color: rgba(33, 33, 33, 0.2);
 }
 
 html {
@@ -296,14 +299,22 @@ img {
   left: 50%;
 
   width: 408px;
-  height: 576px;
+  padding: 24px;
   background-color: var(--modal-window-background);
   box-shadow: var(--modal-box-shadow);
   border-radius: 4px;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.modal-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--title-text-color);
+  margin-top: 48px;
+}
 .button-close {
   position: absolute;
   top: 24px;
@@ -323,6 +334,150 @@ img {
   fill: var(--primary-white-color);
   background-color: var(--active-accent-color);
   border-color: var(--active-accent-color);
+}
+
+label {
+  display: block;
+}
+.form-text {
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--border-icon-color);
+  margin: 8px 0 4px 0;
+}
+.position-icon {
+  position: relative;
+}
+.user-name {
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  margin-top: 14px;
+}
+.modal-label input {
+  font-family: inherit;
+  color: var(--primary-text-color);
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  width: 100%;
+  height: 40px;
+  padding: 0 16px 0 38px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.position-icon:focus-within {
+  fill: var(--accent-color);
+}
+.modal-label input:focus-within {
+  border-color: var(--accent-color);
+  outline: 0;
+}
+.form-icon {
+  position: absolute;
+  top: 50%;
+  transform: translate(16px, -50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text-comment {
+  resize: none;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: var(--primary-text-color);
+  width: 100%;
+  height: 120px;
+  padding: 8px 16px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.text-comment:focus-within {
+  outline: 0;
+  border-color: var(--accent-color);
+}
+.text-comment::placeholder {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: var(--placeholder-color-text);
+}
+
+.checkbox-block {
+  display: flex;
+
+  align-items: center;
+  margin: 16px 0 24px 0;
+  cursor: pointer;
+}
+
+.checkbox-text {
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  margin: 0 0 0 8px;
+}
+
+.checkbox {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1.25px solid var(--title-text-color);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.checkbox:focus-within {
+  outline: 0;
+  border-color: var(--accent-color);
+}
+
+.checkbox:checked {
+  background-image: url(../images/checkbox.svg);
+  border: none;
+  width: 16px;
+  height: 16px;
+}
+
+.privacy-policy {
+  color: var(--accent-color);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.privacy-policy:focus {
+  outline: 0;
+  border: 1px solid var(--accent-color);
+  border-radius: 2px;
+}
+
+.form-button {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  display: block;
+  letter-spacing: 0.04em;
+  margin: 0 auto;
+  box-shadow: var(--box-shadow);
+  border-radius: 4px;
+  border: 0;
+  width: 169px;
+  height: 56px;
+  cursor: pointer;
+
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-button:focus,
+.form-button:hover {
+  outline: 0;
+  background-color: var(--active-accent-color);
 }
 
 /* Work */
@@ -520,6 +675,7 @@ img {
   background-color: var(--title-text-color);
   padding-top: 100px;
   padding-bottom: 100px;
+  min-width: 1440px;
 }
 .foot-contain {
   display: flex;
@@ -577,6 +733,83 @@ img {
 .social-link:hover,
 .social-link:focus {
   background-color: var(--footer-icon-active-color);
+}
+
+/* Subscribe */
+
+.footer-form {
+  margin-left: 80px;
+}
+.form-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+
+  color: var(--primary-white-color);
+}
+.label-sub {
+  display: inline-block;
+}
+.form-sub input {
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: var(--primary-white-color);
+  border: 1px solid var(--form-border-color);
+  filter: drop-shadow var(--button-shadow);
+  border-radius: 4px;
+  padding: 0 16px 0 16px;
+  margin-top: 16px;
+  height: 40px;
+  width: 264px;
+  background-color: transparent;
+  outline: 0;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-sub input:focus-within {
+  border-color: var(--accent-color);
+}
+.form-sub::placeholder {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: var(--placeholder-color-text);
+}
+.button-sub {
+  display: inline-flex;
+  padding: 8px 24px;
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+  margin-left: 22px;
+  background-color: var(--accent-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.button-sub:focus,
+.button-sub:hover {
+  background-color: var(--active-accent-color);
+}
+.button-sub-text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--primary-white-color);
+  margin-right: 16px;
+  padding: 0;
+  border: none;
+}
+.button-icon {
+  display: inline-flex;
+  align-items: center;
 }
 
 /* Style SCC for Portfolio page */

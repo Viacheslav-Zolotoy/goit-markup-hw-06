@@ -71,10 +71,11 @@
             <h2 class="modal-title">
               Leave your contacts and we will call you back
             </h2>
-            <svg class="button-close" width="24" height="24" data-modal-close>
-              <use href="./images/symbol-defs.svg#icon-close"></use>
-            </svg>
-
+            <button class="button-modal-close">
+              <svg class="button-close" width="8" height="8" data-modal-close>
+                <use href="./images/symbol-defs.svg#icon-close"></use>
+              </svg>
+            </button>
             <form class="modal-form">
               <label class="modal-label">
                 <p class="user-name form-text">Name</p>
@@ -103,7 +104,7 @@
                   <input type="email" name="user_email" required />
                 </div>
               </label>
-              <label class="label-comment">
+              <label class="modal-label label-comment">
                 <p class="user-comment form-text">Comment</p>
                 <textarea
                   class="text-comment"
@@ -496,7 +497,7 @@
           </p>
         </div>
         <div class="social">
-          <h2 class="social-title">Social media</h2>
+          <h3 class="social-title">Social media</h3>
           <ul class="social-list">
             <li class="social-li">
               <a href="#" class="social-link">
@@ -530,21 +531,23 @@
         </div>
         <div class="footer-form">
           <form class="form-sub">
-            <h2 class="form-title">Subscribe</h2>
-            <label class="label-sub">
-              <input
-                type="email"
-                name="email"
-                autocomplete="on"
-                placeholder="E-mail"
-              />
-            </label>
-            <button class="button-sub" type="submit">
-              <span class="button-sub-text">Subscribe</span>
-              <svg class="button-icon" width="24" height="24">
-                <use href="./images/symbol-defs.svg#icon-subscribe"></use>
-              </svg>
-            </button>
+            <h3 class="form-title">Subscribe</h3>
+            <div class="form-block">
+              <label class="label-sub">
+                <input
+                  type="email"
+                  name="email"
+                  autocomplete="on"
+                  placeholder="E-mail"
+                />
+              </label>
+              <button class="button-sub" type="submit">
+                <span class="button-sub-text">Subscribe</span>
+                <svg class="button-icon" width="24" height="24">
+                  <use href="./images/symbol-defs.svg#icon-subscribe"></use>
+                </svg>
+              </button>
+            </div>
           </form>
         </div>
       </div>
